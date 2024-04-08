@@ -1,25 +1,20 @@
-$(document).ready(init);
-
-const HOST = '0.0.0.0';
-
-function init () {
-  const amenityObj = {};
+$(document).ready(initialize);
+function initialize () {
+  const amenity = {};
   $('.amenities .popover input').change(function () {
     if ($(this).is(':checked')) {
-      amenityObj[$(this).attr('data-name')] = $(this).attr('data-id');
+      amenity[$(this).attr('data-name')] = $(this).attr('data-id');
     } else if ($(this).is(':not(:checked)')) {
-      delete amenityObj[$(this).attr('data-name')];
+      delete amenity[$(this).attr('data-name')];
     }
-    const names = Object.keys(amenityObj);
-    $('.amenities h4').text(names.sort().join(', '));
+    const amenities = Object.keys(amenity);
+    $('.amenities h4').text(amenities.sort().join(', '));
   });
-
   apiStatus();
 }
 
 function apiStatus () {
-  const API_URL = `http://${HOST}:5001/api/v1/status/`;
-  $.get(API_URL, (data, textStatus) => {
+  $.get('http://0.0.0.0:5001/api/v1/status/', (data, textStatus) => {
     if (textStatus === 'success' && data.status === 'OK') {
       $('#api_status').addClass('available');
     } else {
