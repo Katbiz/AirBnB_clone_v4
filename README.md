@@ -214,3 +214,5 @@ For future projects, this serves as a great base for beginning to understand oth
 🔹 [LinkedIn](https://www.linkedin.com/in/jhoan-stiven-zamora-caicedo/)
 
 🔹 [Twitter](https://twitter.com/JhoanZamora10)
+
+Katleho Ramothamo another conributer to this project. I am a fullstack developer, a water technician amd an english teacher.
